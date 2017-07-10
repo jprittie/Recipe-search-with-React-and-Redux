@@ -23,6 +23,7 @@ const loggerMiddleware = createLogger()
 //her store also has a preloaded state
 const store = createStore(
   rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   // add redux-logger middleware!
   applyMiddleware(createEpicMiddleware(rootEpic), loggerMiddleware),
 );
