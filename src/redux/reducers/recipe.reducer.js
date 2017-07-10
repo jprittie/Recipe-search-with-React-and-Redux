@@ -5,6 +5,13 @@ const DEFAULT_STATE = {
   isError: false
 };
 
+export const textInput = (state = '', action) => {
+  if(action.type === RECIPE_ACTIONS.INPUT_CHANGE) {
+    return action.payload
+  }
+  return state;
+};
+
 export default (state = DEFAULT_STATE, action) => {
 
   switch(action.type) {

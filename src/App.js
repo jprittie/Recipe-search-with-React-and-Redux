@@ -3,20 +3,23 @@ import './App.css';
 import { connect } from 'react-redux';
 import { getRecipeByName } from './redux/actions/recipe.actions';
 
+import Searchbar from './components/searchbar.js'
 
-// props should now have data coming in from redux state
 
-const App = props =>
+
+
+const App = ({recipeList, getRecipeByName}) =>
   (
     <div className="App">
       <div className="App-header">
-        {props.test}
+        {recipeList.test}
         <h2>Welcome to <span className="strike">React</span> Redux-Observable!</h2>
       </div>
+      <Searchbar />
       <p className="App-intro">
-        <button onClick={() => props.getRecipeByName('omelet')}>Click me for Omelet</button>
+        <button onClick={() => getRecipeByName('omelet')}>Click me for Omelet</button>
       </p>
-      {props.recipeList.map(recipe => <h3 key={recipe.uri}>name: {recipe.label} calories: {recipe.calories}</h3>)}
+      {recipeList.map(recipe => <h3 key={recipe.uri}>name: {recipe.label} calories: {recipe.calories}</h3>)}
     </div>
   );
 
