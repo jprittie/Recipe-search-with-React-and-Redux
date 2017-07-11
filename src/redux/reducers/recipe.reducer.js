@@ -12,6 +12,13 @@ export const textInput = (state = '', action) => {
   return state;
 };
 
+export const selectedRecipe = (state = {}, action) => {
+  if(action.type === RECIPE_ACTIONS.GET_RECIPE_DETAILS) {
+    return {...action.payload}
+  }
+  return state;
+}
+
 export default (state = DEFAULT_STATE, action) => {
 
   switch(action.type) {
