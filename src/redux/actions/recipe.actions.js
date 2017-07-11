@@ -11,7 +11,7 @@ export const RECIPE_ACTIONS = {
 
 export const getRecipeByName = recipeName => ({
   type: RECIPE_ACTIONS.GET_RECIPES_BY_NAME,
-  payload: recipeName,
+  payload: recipeName, 
 });
 
 export const inputChange = value => ({
