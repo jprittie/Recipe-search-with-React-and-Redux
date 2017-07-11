@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { inputChange, getRecipeByName } from '../redux/actions/recipe.actions';
+
 
 const Searchbar = ({textInput, onTextInputChange, onSearchRecipes}) => (
 
