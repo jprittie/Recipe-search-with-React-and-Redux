@@ -1,9 +1,11 @@
 import combineReducers from 'redux/es/combineReducers';
-import recipeReducer, { textInput } from './recipe.reducer';
+import recipeReducer, { textInput, selectedRecipe } from './recipe.reducer';
 
 
 export default combineReducers({
   recipe: recipeReducer,
   textInput: textInput,
+  selectedRecipe: selectedRecipe,
+
   testReducer: (state = 'foobar', action) => state // a boring reducer just to illustrate combine reducer
 });
