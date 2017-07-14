@@ -9,6 +9,9 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { createLogger } from 'redux-logger';
+import { syncHistoryWithStore } from 'react-router-redux';
+//think we take this out later
+import { browserHistory } from 'react-router';
 //do I need to import and install rxjs?
 
 import rootReducer from './redux/reducers';
@@ -28,7 +31,8 @@ const store = createStore(
   applyMiddleware(createEpicMiddleware(rootEpic), loggerMiddleware),
 );
 
-
+//Can I pass this to Provider?
+export const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={ store }>
