@@ -3,6 +3,7 @@ export const RECIPE_ACTIONS = {
   GET_RECIPES_BY_NAME: 'GET_RECIPES_BY_NAME',
   GET_RECIPE_DETAILS: 'GET_RECIPE_DETAILS',
   INPUT_CHANGE: 'INPUT_CHANGE',
+  CALORIES_SELECT: 'CALORIES_SELECT',
 
   // epic actions
   RECIPES_RECEIVED_SUCCESS: 'RECIPES_RECEIVED_SUCCESS',
@@ -11,13 +12,19 @@ export const RECIPE_ACTIONS = {
   CLEAR_SEARCH_RESULTS: 'CLEAR_SEARCH_RESULTS'
 };
 
-export const getRecipeByName = recipeName => ({
+//change name of action to get by search parameters
+export const getRecipeByName = searchTerms => ({
   type: RECIPE_ACTIONS.GET_RECIPES_BY_NAME,
-  payload: recipeName,
+  payload: searchTerms,
 });
 
 export const inputChange = value => ({
   type: RECIPE_ACTIONS.INPUT_CHANGE,
+  payload: value,
+});
+
+export const searchByMaxCalories = value => ({
+  type: RECIPE_ACTIONS.CALORIES_SELECT,
   payload: value,
 });
 

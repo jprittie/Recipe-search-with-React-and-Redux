@@ -5,12 +5,28 @@ const DEFAULT_STATE = {
   isError: false
 };
 
-export const textInput = (state = '', action) => {
+const DEFAULT_SEARCH_PARAMETERS = {
+  textInput: '',
+  maxCalories: ''
+}
+
+export const searchParameters = (state = DEFAULT_SEARCH_PARAMETERS, action) => {
   if(action.type === RECIPE_ACTIONS.INPUT_CHANGE) {
-    return action.payload
+    return {...state, textInput: action.payload };
+  }
+  if(action.type === RECIPE_ACTIONS.CALORIES_SELECT) {
+    return {...state, maxCalories: action.payload }
   }
   return state;
 };
+
+/*
+export const maxCalories = (state = '', action) => {
+  if(action.type === RECIPE_ACTIONS.CALORIES_SELECT) {
+    return action.payload
+  }
+  return state;
+};*/
 
 export const selectedRecipe = (state = {}, action) => {
   if(action.type === RECIPE_ACTIONS.GET_RECIPE_DETAILS) {

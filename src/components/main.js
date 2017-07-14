@@ -1,5 +1,6 @@
 import React from 'react';
 import Searchbar from './searchbar';
+import AdvancedSearchbar from './advancedsearchbar';
 import { Link } from 'react-router';
 
 
@@ -15,7 +16,9 @@ const Main = (props) => (
 
       <Searchbar />
     </div>
-
+    <div>
+      <AdvancedSearchbar />
+    </div>
     <div>
       {props.children}
     </div>

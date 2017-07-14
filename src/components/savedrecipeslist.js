@@ -13,7 +13,7 @@ const SavedRecipesList = ({savedRecipes, onSetSelectedRecipe, selectedRecipe}) =
 
     <div className="recipe-list">
       <div className="recipe-list-header">
-        <h3>Search results</h3>
+        <h3>My saved recipes</h3>
       </div>
 
       <ul className="card-grid">
