@@ -11,8 +11,7 @@ const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
     </div>
 
     <div className="recipe-detail">
-      <h3>Recipe details</h3>
-      {selectedRecipe.label}
+      <h3>{selectedRecipe.label}</h3>
 
       <ul className="ingredient-list">
         {selectedRecipe.ingredientLines.map(ingredient => <li>{ingredient}</li>)}
