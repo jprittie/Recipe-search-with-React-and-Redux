@@ -1,9 +1,11 @@
 import combineReducers from 'redux/es/combineReducers';
+import { routerReducer } from 'react-router-redux';
 import recipeReducer, { textInput, selectedRecipe } from './recipe.reducer';
-import { savedRecipes } from './savetostorage.reducer';
+import { savedRecipes } from './saverecipes.reducer';
 
 export default combineReducers({
   recipe: recipeReducer,
+  routing: routerReducer,
   textInput: textInput,
   selectedRecipe: selectedRecipe,
   savedRecipes: savedRecipes,
