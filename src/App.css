@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+  color: #000;
+}
 
 .App {
   text-align: center;
@@ -121,4 +125,12 @@
   text-align: left;
   margin-left: 0;
   padding-left: 0;
+}
+
+.loader {
+  width: 1200px;
+  height: 600px;
+  margin-top: 80px;
+  font-style: bold;
+  text-align: center;
 }

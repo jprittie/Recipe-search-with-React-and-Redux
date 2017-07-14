@@ -20,16 +20,27 @@ export const selectedRecipe = (state = {}, action) => {
 }
 
 export default (state = DEFAULT_STATE, action) => {
-
   switch(action.type) {
-
     case RECIPE_ACTIONS.RECIPES_RECEIVED_SUCCESS:
       return {...state, list: action.payload, isError: false };
-
     case RECIPE_ACTIONS.RECIPES_RECEIVED_ERROR:
       return {...state, list: [], isError: true };
-
     default:
       return state;
   }
 }
+
+export const loadingState = (state = false, action) => {
+  if(action.type === RECIPE_ACTIONS.SET_LOADING_STATE) {
+    return action.payload
+  }
+  return state;
+}
+
+/*
+export const recipe.list = (state = [], action) => {
+  if(action.type === RECIPE_ACTIONS.CLEAR_SEARCH_RESULTS) {
+    return state;
+  }
+  return state;
+} */

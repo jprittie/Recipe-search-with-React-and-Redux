@@ -5,21 +5,28 @@ import { getRecipeDetails } from '../redux/actions/recipe.actions';
 import RecipeCard from './recipecard';
 
 
-const RecipeList = ({recipeList, isError, onSetSelectedRecipe, selectedRecipe}) => (
+const RecipeList = ({recipeList, isError, onSetSelectedRecipe, selectedRecipe, loadingState}) => (
 
-  <div className="recipe-list">
-    <div className="recipe-list-header">
-      <h3>Search results</h3>
+  <div>
+
+    { (loadingState) ? <div className="loader"><h1>Loading results...</h1></div> : <div></div> }
+
+    <div className="recipe-list">
+      <div className="recipe-list-header">
+        <h3>Search results</h3>
+      </div>
+
+      <ul className="card-grid">
+      {recipeList.map(recipe => <li className="card-container-link"><Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)} key={recipe.uri} > <RecipeCard recipe={recipe}/> </Link></li> )}
+      </ul>
     </div>
 
-    <ul className="card-grid">
-    {recipeList.map(recipe => <li className="card-container-link"><Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)} key={recipe.uri} > <RecipeCard recipe={recipe}/> </Link></li> )}
-    </ul>
   </div>
+
 
 )
 
-/*    {recipeList.map(recipe => <Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)} className="recipe-list-button" key={recipe.uri}> {recipe.label} </Link> )}*/
+
 //do error handling here... if state.recipe.list has length 0, show no results found for textInput. However, state.recipe.list could also have length 0 if there is a server error, so that's not a reliable way to handle it
 //if length === 0 && isError: false then there were no search results
 // show server error if isError is true(and change view?)
@@ -28,7 +35,8 @@ const RecipeList = ({recipeList, isError, onSetSelectedRecipe, selectedRecipe}) 
 const mapStateToProps = (state) => ({
   selectedRecipe: state.selectedRecipe,
   recipeList: state.recipe.list,
-  isError: state.recipe.isError
+  isError: state.recipe.isError,
+  loadingState: state.loadingState
 })
 
 const actions = {
