@@ -5,11 +5,15 @@ import { getRecipeDetails } from '../redux/actions/recipe.actions';
 import RecipeCard from './recipecard';
 
 
-const RecipeList = ({recipeList, isError, onSetSelectedRecipe, selectedRecipe, loadingState}) => (
+const RecipeList = ({recipeList, isError, onSetSelectedRecipe, loadingState, textInput}) => (
 
   <div>
 
     { (loadingState) ? <div className="loader"><h1>Loading results...</h1></div> : <div></div> }
+
+    { (recipeList.length===0 && !isError) ? <div className="loader"><h1>Sorry, there were no search results for {textInput}.</h1></div> : <div></div> }
+
+    { (isError) ? <div className="loader"><h1>Sorry, there was an error retrieving results.</h1></div> : <div></div> }
 
     <div className="recipe-list">
       <div className="recipe-list-header">
@@ -27,14 +31,10 @@ const RecipeList = ({recipeList, isError, onSetSelectedRecipe, selectedRecipe, l
 )
 
 
-//do error handling here... if state.recipe.list has length 0, show no results found for textInput. However, state.recipe.list could also have length 0 if there is a server error, so that's not a reliable way to handle it
-//if length === 0 && isError: false then there were no search results
-// show server error if isError is true(and change view?)
-// where did naming of state.recipe come from?
 
 const mapStateToProps = (state) => ({
-  selectedRecipe: state.selectedRecipe,
   recipeList: state.recipe.list,
+  textInput: state.textInput,
   isError: state.recipe.isError,
   loadingState: state.loadingState
 })
