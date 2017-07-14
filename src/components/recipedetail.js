@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { saveToMyRecipes } from '../redux/actions/savetostorage.actions';
+import { saveToMyRecipes } from '../redux/actions/saverecipes.actions';
 
 //I don't actually need to bring in savedRecipes here
 const RecipeDetail = ({selectedRecipe, onSaveRecipe, savedRecipes}) => (
