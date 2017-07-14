@@ -12,7 +12,7 @@ import Main from './components/main';
 import Splash from './components/splash';
 import RecipeList from './components/recipelist';
 import RecipeDetail from './components/recipedetail';
-import SavedRecipesList from './components/savedrecipes';
+import SavedRecipesList from './components/savedrecipeslist';
 
 
 
