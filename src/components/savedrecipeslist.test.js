@@ -17,15 +17,15 @@ describe ('saved recipes component tests', () => {
     }
   ]
 
-	const emptyList = []
+	const emptyList = [];
 
 	it('should render the entire list of saved recipes', () => {
 		const wrapper = shallow(<SavedRecipeList savedRecipes={savedRecipes}/>);
-    expect(wrapper.find(RecipeCard)).toHaveLength(recipeList.length);
+    expect(wrapper.find(RecipeCard)).toHaveLength(savedRecipes.length);
 	});
 
 	it('should not render any saved recipes', () => {
-		const wrapper = shallow(<SavedRecipeList savedRecipes={savedRecipes}/>);
+		const wrapper = shallow(<SavedRecipeList savedRecipes={emptyList}/>);
 		expect(wrapper.find(RecipeCard)).toHaveLength(0);
 	});
 
