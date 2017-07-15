@@ -10,8 +10,8 @@ import { Link } from 'react-router';
 
 import Main from './components/main';
 import Splash from './components/splash';
-import RecipeList from './components/recipelist';
-import RecipeDetail from './components/recipedetail';
+import RecipeList from './components/recipelist.container';
+import RecipeDetail from './components/recipedetail.container';
 import SavedRecipesList from './components/savedrecipeslist';
 
 
@@ -35,10 +35,7 @@ const App = ({textInput, recipeList, getRecipeByName}) => (
 
 
 
-
-
 const connectConfig = connect(state => ({
-  test: 'foo', // how could I potentially apply the value of the reducer on line 6 of reducers/index.js?
   recipeList: state.recipe.list,
   textInput: state.textInput,
 }), {

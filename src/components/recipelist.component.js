@@ -21,7 +21,7 @@ const RecipeList = ({recipeList, isError, onSetSelectedRecipe, loadingState, tex
       </div>
 
       <ul className="card-grid">
-      {recipeList.map(recipe => <li className="card-container-link"><Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)} key={recipe.uri} > <RecipeCard recipe={recipe}/> </Link></li> )}
+        {recipeList.map(recipe => <li className="card-container-link" key={recipe.uri}><Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)}> <RecipeCard recipe={recipe}/> </Link></li> )}
       </ul>
     </div>
 
@@ -30,17 +30,4 @@ const RecipeList = ({recipeList, isError, onSetSelectedRecipe, loadingState, tex
 
 )
 
-
-
-const mapStateToProps = (state) => ({
-  recipeList: state.recipe.list,
-  textInput: state.textInput,
-  isError: state.recipe.isError,
-  loadingState: state.loadingState
-})
-
-const actions = {
-  onSetSelectedRecipe: getRecipeDetails
-}
-
-export default connect(mapStateToProps, actions)(RecipeList);
+export default RecipeList;

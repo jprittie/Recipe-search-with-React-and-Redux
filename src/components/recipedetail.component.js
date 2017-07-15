@@ -41,14 +41,4 @@ const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
 
 )
 
-
-const mapStateToProps = (state) => ({
-  selectedRecipe: state.selectedRecipe,
-})
-
-const actions = {
-  onSaveRecipe: saveToMyRecipes
-}
-
-
-export default connect(mapStateToProps, actions)(RecipeDetail);
+export default RecipeDetail;
