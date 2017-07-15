@@ -12,6 +12,10 @@ import { createLogger } from 'redux-logger';
 import { syncHistoryWithStore } from 'react-router-redux';
 //think we take this out later
 import { browserHistory } from 'react-router';
+
+import { saveState } from './localstorage'
+import watch from 'redux-watch'
+
 //do I need to import and install rxjs?
 
 import rootReducer from './redux/reducers';
@@ -30,6 +34,23 @@ const store = createStore(
   // add redux-logger middleware!
   applyMiddleware(createEpicMiddleware(rootEpic), loggerMiddleware),
 );
+
+/*
+store.subscribe(() => {
+  saveState({
+    savedRecipes: store.getState().savedRecipes
+  })
+})*/
+
+let w = watch(store.getState, 'savedRecipes')
+store.subscribe(w((newVal, oldVal, objectPath) => {
+  console.log('%s changed from %s to %s', objectPath, oldVal, newVal)
+  saveState(
+    store.getState().savedRecipes
+  )
+}))
+
+
 
 //Can I pass this to Provider?
 export const history = syncHistoryWithStore(browserHistory, store);
