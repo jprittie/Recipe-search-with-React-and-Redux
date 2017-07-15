@@ -5,7 +5,7 @@ const DEFAULT_STATE = {
   isError: false
 };
 
-const DEFAULT_SEARCH_PARAMETERS = {
+const SEARCH_PARAMETERS = {
   textInput: '',
   maxCalories: 20000,
   dietLabel: '',
@@ -15,7 +15,7 @@ const DEFAULT_SEARCH_PARAMETERS = {
 
 
 //try rewriting as switch case
-export const searchParameters = (state = DEFAULT_SEARCH_PARAMETERS, action) => {
+export const searchParameters = (state = SEARCH_PARAMETERS, action) => {
   if(action.type === RECIPE_ACTIONS.INPUT_CHANGE) {
     return {...state, textInput: action.payload };
   }
