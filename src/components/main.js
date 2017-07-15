@@ -1,6 +1,6 @@
 import React from 'react';
 import Searchbar from './searchbar';
-import AdvancedSearchbar from './advancedsearchbar';
+import AdvancedSearchbar from './advancedsearchbar.container';
 import { Link } from 'react-router';
 
 

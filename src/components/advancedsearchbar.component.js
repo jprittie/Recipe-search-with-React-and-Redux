@@ -58,18 +58,4 @@ const AdvancedSearchbar = ({textInput, searchParameters, onTextInputChange, onCa
   </div>
 )
 
-const mapStateToProps = (state) => ({
-  textInput: state.textInput,
-  maxCalories: state.maxCalories,
-  searchParameters: state.searchParameters
-})
-
-const actions = {
-  onTextInputChange: inputChange,
-  onCaloriesSelect: searchByMaxCalories,
-  onDietLabelSelect: searchByDietLabel,
-  onHealthLabelSelect: searchByHealthLabel,
-  onSearchRecipes: getRecipeByName,
-}
-
-export default connect(mapStateToProps, actions)(AdvancedSearchbar);
+export default AdvancedSearchbar;
