@@ -10,7 +10,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { createLogger } from 'redux-logger';
 import { syncHistoryWithStore } from 'react-router-redux';
-//think we take this out later
 import { browserHistory } from 'react-router';
 
 import { saveState } from './localstorage'
@@ -35,13 +34,11 @@ const store = createStore(
   applyMiddleware(createEpicMiddleware(rootEpic), loggerMiddleware),
 );
 
-/*
-store.subscribe(() => {
-  saveState({
-    savedRecipes: store.getState().savedRecipes
-  })
-})*/
+export const history = syncHistoryWithStore(browserHistory, store);
 
+
+// I want to watch for changes only in state.savedRecipes, not entire state
+// So I'm using a module called redux-watch to do that
 let w = watch(store.getState, 'savedRecipes')
 store.subscribe(w((newVal, oldVal, objectPath) => {
   console.log('%s changed from %s to %s', objectPath, oldVal, newVal)
@@ -51,9 +48,6 @@ store.subscribe(w((newVal, oldVal, objectPath) => {
 }))
 
 
-
-//Can I pass this to Provider?
-export const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={ store }>
