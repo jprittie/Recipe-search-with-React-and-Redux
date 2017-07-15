@@ -4,6 +4,8 @@ export const RECIPE_ACTIONS = {
   GET_RECIPE_DETAILS: 'GET_RECIPE_DETAILS',
   INPUT_CHANGE: 'INPUT_CHANGE',
   CALORIES_SELECT: 'CALORIES_SELECT',
+  DIET_LABEL_SELECT: 'DIET_LABEL_SELECT',
+  HEALTH_LABEL_SELECT: 'HEALTH_LABEL_SELECT',
 
   // epic actions
   RECIPES_RECEIVED_SUCCESS: 'RECIPES_RECEIVED_SUCCESS',
@@ -25,6 +27,16 @@ export const inputChange = value => ({
 
 export const searchByMaxCalories = value => ({
   type: RECIPE_ACTIONS.CALORIES_SELECT,
+  payload: value,
+});
+
+export const searchByDietLabel = value => ({
+  type: RECIPE_ACTIONS.DIET_LABEL_SELECT,
+  payload: value,
+});
+
+export const searchByHealthLabel = value => ({
+  type: RECIPE_ACTIONS.HEALTH_LABEL_SELECT,
   payload: value,
 });
 

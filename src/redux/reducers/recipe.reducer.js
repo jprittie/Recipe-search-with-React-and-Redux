@@ -7,15 +7,26 @@ const DEFAULT_STATE = {
 
 const DEFAULT_SEARCH_PARAMETERS = {
   textInput: '',
-  maxCalories: ''
+  maxCalories: 20000,
+  dietLabel: '',
+  healthLabel: ''
 }
 
+
+
+//try rewriting as switch case
 export const searchParameters = (state = DEFAULT_SEARCH_PARAMETERS, action) => {
   if(action.type === RECIPE_ACTIONS.INPUT_CHANGE) {
     return {...state, textInput: action.payload };
   }
   if(action.type === RECIPE_ACTIONS.CALORIES_SELECT) {
     return {...state, maxCalories: action.payload }
+  }
+  if(action.type === RECIPE_ACTIONS.DIET_LABEL_SELECT) {
+    return {...state, dietLabel: action.payload }
+  }
+  if(action.type === RECIPE_ACTIONS.HEALTH_LABEL_SELECT) {
+    return {...state, healthLabel: action.payload }
   }
   return state;
 };

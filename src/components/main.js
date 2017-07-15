@@ -14,7 +14,7 @@ const Main = (props) => (
         <h4>My Saved Recipes</h4>
       </Link>
 
-      <Searchbar />
+
     </div>
     <div>
       <AdvancedSearchbar />

@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { inputChange, getRecipeByName, searchByMaxCalories } from '../redux/actions/recipe.actions';
+import { inputChange, getRecipeByName, searchByMaxCalories, searchByDietLabel, searchByHealthLabel } from '../redux/actions/recipe.actions';
 import { Link } from 'react-router';
 
 
-const AdvancedSearchbar = ({textInput, onTextInputChange, onCaloriesSelect, maxCalories, onSearchRecipes, searchParameters}) => (
+const AdvancedSearchbar = ({textInput, searchParameters, onTextInputChange, onCaloriesSelect, onDietLabelSelect, onHealthLabelSelect, onSearchRecipes }) => (
 
   <div className="input-group advanced-searchbar">
 
-      <label for="advanced-search-input">Search by keyword  </label>
+      <label htmlFor="advanced-search-input">Search by keyword  </label>
       <input
          value={textInput}
          id="advanced-search-input"
@@ -16,17 +16,17 @@ const AdvancedSearchbar = ({textInput, onTextInputChange, onCaloriesSelect, maxC
          onChange={ev => onTextInputChange(ev.target.value)}
        />
 
-     <label for="calories-drop-down">Max Calories Per Serving  </label>
-      <select id="calories-drop-down" onChange={ev => onCaloriesSelect(ev.target.value)}>
-        <option selected="selected" value=""></option>
+     <label htmlFor="calories-drop-down">Max Calories Per Serving  </label>
+      <select id="calories-drop-down" type="number" onChange={ev => onCaloriesSelect(ev.target.value)}>
+        <option selected="selected" value=" "></option>
         <option value="200">200</option>
         <option value="300">300</option>
         <option value="400">400</option>
       </select>
 
-      <label for="diet-label-drop-down">Diet Label  </label>
-      <select id="diet-label-drop-down">
-        <option selected="selected" value=""></option>
+      <label htmlFor="diet-label-drop-down">Diet Label  </label>
+      <select id="diet-label-drop-down" onChange={ev => onDietLabelSelect(ev.target.value)}>
+        <option selected="selected" value=" "></option>
         <option value="balanced">Balanced</option>
         <option value="high-protein">High Protein</option>
         <option value="high-fiber">High Fibre</option>
@@ -35,9 +35,9 @@ const AdvancedSearchbar = ({textInput, onTextInputChange, onCaloriesSelect, maxC
         <option value="low-sodium">Low Sodium</option>
       </select>
 
-      <label for="health-label-drop-down">Health Label  </label>
-      <select id="health-label-drop-down">
-        <option selected="selected" value=""></option>
+      <label htmlFor="health-label-drop-down">Health Label  </label>
+      <select id="health-label-drop-down" onChange={ev => onHealthLabelSelect(ev.target.value)}>
+        <option selected="selected" value=" "></option>
         <option value="peanut-free">Peanut Free</option>
         <option value="tree-nut-free">Tree Nut Free</option>
         <option value="vegetarian">Vegetarian</option>
@@ -67,6 +67,8 @@ const mapStateToProps = (state) => ({
 const actions = {
   onTextInputChange: inputChange,
   onCaloriesSelect: searchByMaxCalories,
+  onDietLabelSelect: searchByDietLabel,
+  onHealthLabelSelect: searchByHealthLabel,
   onSearchRecipes: getRecipeByName,
 }
 
