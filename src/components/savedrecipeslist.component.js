@@ -9,7 +9,7 @@ const SavedRecipesList = ({savedRecipes, onSetSelectedRecipe, selectedRecipe}) =
 
   <div>
 
-    { (savedRecipes.length===0) ? <div className="loader"><h1>You don't have any saved recipes at the moment.</h1></div> : <div></div> }
+    { (savedRecipes.length===0) ? <div className="loader"><h1>You don&#x27t have any saved recipes at the moment.</h1></div> : <div></div> }
 
     <div className="recipe-list">
       <div className="recipe-list-header">
@@ -24,14 +24,4 @@ const SavedRecipesList = ({savedRecipes, onSetSelectedRecipe, selectedRecipe}) =
 
 );
 
-
-const mapStateToProps = (state) => ({
-  savedRecipes: state.savedRecipes,
-  selectedRecipe: state.selectedRecipe
-});
-
-const actions = {
-  onSetSelectedRecipe: getRecipeDetails
-}
-
-export default connect(mapStateToProps, actions)(SavedRecipesList);
+export default SavedRecipesList;
