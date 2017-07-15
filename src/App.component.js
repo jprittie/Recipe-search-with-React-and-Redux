@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-import { connect } from 'react-redux';
-import { inputChange, getRecipeByName } from './redux/actions/recipe.actions';
+
 
 import { history } from './index.js';
 import { Router, Route, IndexRoute } from 'react-router';
-//import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router';
 
 import Main from './components/main';
@@ -16,8 +14,7 @@ import SavedRecipesList from './components/savedrecipeslist.container';
 
 
 
-
-const App = ({textInput, recipeList, getRecipeByName}) => (
+const App = () => (
 
     <div className="App">
 
@@ -33,14 +30,4 @@ const App = ({textInput, recipeList, getRecipeByName}) => (
     </div>
   );
 
-
-
-const connectConfig = connect(state => ({
-  recipeList: state.recipe.list,
-  textInput: state.textInput,
-}), {
-  getRecipeByName
-});
-
-
-export default connectConfig(App);
+export default App;
