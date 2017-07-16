@@ -9,21 +9,22 @@ const RecipeList = ({recipeList, isError, onSetSelectedRecipe, loadingState, tex
 
   <div>
 
-    { (loadingState) ? <div className="loader"><h1>Loading results...</h1></div> : <div></div> }
+    { (loadingState) ? <div className="loader"><h2>Loading results...</h2></div> : <div></div> }
 
-    { (recipeList.length===0 && !isError) ? <div className="loader"><h1>Sorry, there were no search results for {textInput}.</h1></div> : <div></div> }
+    { (recipeList.length===0 && !isError) ? <div className="loader"><h2>Sorry, there were no search results for "{textInput} "</h2></div> : <div></div> }
 
-    { (isError) ? <div className="loader"><h1>Sorry, there was an error retrieving results.</h1></div> : <div></div> }
+    { (isError) ? <div className="loader"><h2>Sorry, there was an error retrieving results.</h2></div> :
 
-    <div className="recipe-list">
-      <div className="recipe-list-header">
-        <h3>Search results</h3>
+      <div id="recipe-list">
+        <div id="recipe-list-header" className="twelve columns">
+          <h3>search results</h3>
+        </div>
+
+        <ul id="card-grid" className="twelve columns">
+          {recipeList.map(recipe => <li className="card-container-link four columns" key={recipe.uri}><Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)}> <RecipeCard recipe={recipe}/> </Link></li> )}
+        </ul>
       </div>
-
-      <ul className="card-grid">
-        {recipeList.map(recipe => <li className="card-container-link" key={recipe.uri}><Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)}> <RecipeCard recipe={recipe}/> </Link></li> )}
-      </ul>
-    </div>
+    }
 
   </div>
 

@@ -6,20 +6,21 @@ import { Link } from 'react-router';
 
 const Main = (props) => (
   <div>
-    <div className="App-header">
-      <Link to="/" className="app-title">
-        <h2>Search Recipes with the Edamam API</h2>
+    <div id="header">
+      <Link to="/" id="app-title">
+        <h1 id="main-title">search recipes</h1>
+        <h2 id="main-subhed">with the Edamam API</h2>
       </Link>
       <Link to="/savedrecipes" className="saved-recipes-link">
-        <h4>My Saved Recipes</h4>
+        <h4>view saved recipes</h4>
       </Link>
 
 
     </div>
-    <div>
+    <div id="searchbar">
       <AdvancedSearchbar />
     </div>
-    <div>
+    <div className="container">
       {props.children}
     </div>
 

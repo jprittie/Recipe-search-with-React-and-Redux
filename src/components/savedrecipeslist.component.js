@@ -9,15 +9,15 @@ const SavedRecipesList = ({savedRecipes, onSetSelectedRecipe, selectedRecipe}) =
 
   <div>
 
-    { (savedRecipes.length===0) ? <div className="loader"><h1>You don&#x27t have any saved recipes at the moment.</h1></div> : <div></div> }
+    { (savedRecipes.length===0) ? <div className="loader"><h2>You don&#x27t have any saved recipes at the moment.</h2></div> : <div></div> }
 
-    <div className="recipe-list">
-      <div className="recipe-list-header">
-        <h3>My saved recipes</h3>
+    <div id="recipe-list">
+      <div id="recipe-list-header">
+        <h3>my saved recipes</h3>
       </div>
 
-      <ul className="card-grid">
-      {savedRecipes.map(recipe => <li className="card-container-link"><Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)} key={recipe.uri} > <RecipeCard recipe={recipe}/> </Link></li> )}
+      <ul id="card-grid">
+      {savedRecipes.map(recipe => <li className="card-container-link four columns"><Link to={`/recipe/${recipe.label}`} onClick={ () => onSetSelectedRecipe(recipe)} key={recipe.uri} > <RecipeCard recipe={recipe}/> </Link></li> )}
       </ul>
     </div>
   </div>

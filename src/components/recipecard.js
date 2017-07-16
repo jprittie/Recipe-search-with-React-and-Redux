@@ -8,7 +8,7 @@ const RecipeCard = ({recipe}) => (
      <img src={recipe.image} />
     </div>
     <div className="card-title">
-      {recipe.label}
+      <h4>{recipe.label}</h4>
     </div>
   </div>
 

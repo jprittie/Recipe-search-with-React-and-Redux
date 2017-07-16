@@ -1,54 +1,390 @@
+/* ===== CSS Reset ==================================================
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+/* ===== Grid, Base Styles and Typography from CSS Skeleton ======================
+     Skeleton V2.0.4 Copyright 2014, Dave Gamache www.getskeleton.com
+     Free to use under the MIT license. http://www.opensource.org/licenses/mit-license.php
+     12/29/2014
+     ========================================================================== */
+  /* Grid
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+.container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
+  /*margin: 0 auto;*/
+  padding-left: 20px;
+  box-sizing: border-box; }
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 95%;
+    padding: 0; } }
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .container {
+    width: 95%; }
+  .column,
+  .columns {
+    margin-right: 2%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+  .one.column,
+  .one.columns {
+    width: 4.66666666667%; }
+  .two.columns {
+    width: 13.3333333333%; }
+  .three.columns {
+    width: 22%; }
+  .four.columns {
+    width: 30.6666666667%; }
+  .five.columns {
+    width: 39.3333333333%; }
+  .six.columns {
+    width: 48%; }
+  .seven.columns {
+    width: 56.6666666667%; }
+  .eight.columns {
+    width: 65.3333333333%; }
+  .nine.columns {
+    width: 74.0%; }
+  .ten.columns {
+    width: 82.6666666667%; }
+  .eleven.columns {
+    width: 91.3333333333%; }
+  .twelve.columns {
+    width: 100%;
+    margin-left: 0; }
+  .one-third.column {
+    width: 30.6666666667%; }
+  .two-thirds.column {
+    width: 65.3333333333%; }
+  .one-half.column {
+    width: 48%; }
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns {
+    margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns {
+    margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns {
+    margin-left: 26%; }
+  .offset-by-four.column,
+  .offset-by-four.columns {
+    margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns {
+    margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns {
+    margin-left: 52%; }
+  .offset-by-seven.column,
+  .offset-by-seven.columns {
+    margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns {
+    margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns {
+    margin-left: 78.0%; }
+  .offset-by-ten.column,
+  .offset-by-ten.columns {
+    margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns {
+    margin-left: 95.3333333333%; }
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns {
+    margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns {
+    margin-left: 69.3333333333%; }
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns {
+    margin-left: 52%; } }
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.5em;
+  /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6; }
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem; }
+
+h1 {
+  font-size: 4.0rem;
+  line-height: 1.2;
+  letter-spacing: -.1rem; }
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 1.25;
+  letter-spacing: -.1rem; }
+
+h3 {
+  font-size: 3.0rem;
+  line-height: 1.3;
+  letter-spacing: -.1rem; }
+
+h4 {
+  font-size: 2.4rem;
+  line-height: 1.35;
+  letter-spacing: -.08rem; }
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -.05rem; }
+
+h6 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 {
+    font-size: 5.0rem; }
+  h2 {
+    font-size: 4.2rem; }
+  h3 {
+    font-size: 3.6rem; }
+  h4 {
+    font-size: 3.0rem; }
+  h5 {
+    font-size: 2.4rem; }
+  h6 {
+    font-size: 1.5rem; } }
+
+/*Fira sans options are 400 regular, 500 medium*/
+body, li {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+}
+
+p {
+  margin-top: 0; }
+
+p {
+  font-size: 1.3em;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+}
+/*Cardo options are Cardo:400,400i,700*/
+h1, h2 {
+  font-family: 'Cardo', serif;
+  font-weight: 700; }
+
+h3, h4, h5, h6 {
+  font-family: 'Cardo', serif;
+  font-weight: 400; }
+
+
+/* ===== Custom styles ================================================== */
+
+/*
+#wrapper {
+  box-sizing: border-box;
+  position: relative;
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto 0 12%;
+  padding: 0 10px; }
+*/
+
 a {
   text-decoration: none;
   color: #000;
 }
 
+/*
 .App {
   text-align: center;
-}
+} */
 
-.App-header {
-  background-color: #222;
+#header {
+  background-color: #4e4f51;
   height: 120px;
   padding: 20px;
-  color: white;
+  color: #FFF;
 }
 
-.app-title {
+#main-title {
+  text-align: center;
+  font-size: 4.6em;
+  color: #FFF;
+}
+
+#main-subhed {
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  color: #FFF;
+}
+
+#app-title {
+  text-decoration: none;
+}
+
+.saved-recipes-link {
+  text-align: left;
+  position: relative;
+  display: block;
+  left: 20px;
+  top: -30px;
   text-decoration: none;
   color: #FFF;
 }
 
-
-.recipe-list {
-  max-width: 1200px;
-  height: 1000px;
-  margin-top: 3%;
-  margin-left: 20px;
+.saved-recipes-link h4 {
+  font-size: 1.2em;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
 }
 
-.recipe-list-header {
-  text-align: center;
+#searchbar {
+  width: 100%;
+  height: 100px;
+  padding-top: 30px;
+  background-color: #aeb0b2;
+}
+
+#advanced-searchbar {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#advanced-searchbar-input-group {
+  display: block;
+  margin-left: 140px;
+}
+
+#advanced-search-input {
+  margin-right: 6px;
+}
+
+.searchbar-input-labels {
+  margin-left: 12px;
+  padding-right: 8px;
+}
+
+#calories-drop-down{
+  margin-right: 12px;
+}
+
+#diet-label-drop-down{
+  margin-right: 12px;
+}
+
+#health-label-drop-down{
+  margin-right: 12px;
+}
+
+#advanced-search-submit-button {
+  /*background-color: #4e4f51;*/
+  display: block;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
 
 
-.card-grid {
+#recipe-list {
+  max-width: 1200px;
+  height: auto;
+  margin-top: 3%;
+}
+
+#recipe-list-header {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+}
+
+#recipe-list-header h3 {
+  font-family: 'Cardo', serif;
+  font-weight: 700;
+}
+
+
+#card-grid {
   list-style: none;
-  width: 100%;
-  height: 100%;
-  margin-left: 80px;
-  padding: 0;
+  /*width: 100%;*/
+  height: 3000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 70px;
+
 }
 
 .card-container-link {
   float: left;
   list-style: none;
   display: inline-block;
-  width: 25%;
+  /*width: 25%;*/
   height: 400px;
-  margin-right: 40px;
+  margin-right: 10px;
   margin-bottom: 20px;
   text-decoration: none;
   color: #000;
@@ -61,37 +397,37 @@ a {
 }
 
 .card-container {
-  width: 300px;
+  width: 100%;
   height: 400px;
-  margin-right: 6px;
+  margin-right: 20px;
+  margin-left: 20px;
   margin-bottom: 20px;
 }
 
 .card-image {
-  width: 300px;
+  width: 100%;
   height: 300px;
   margin: auto;
 }
 
 .card-title {
-  width: 300px;
+  /*text-align: center;*/
+  box-sizing: border-box;
+  width: 100%;
   height: 40px;
   padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  /*padding-right: 10px;*/
   color: #000;
 }
 
-
-.saved-recipes-link {
-  text-align: left;
-  position: relative;
-  display: block;
-  left: 20px;
-  top: 20px;
-  text-decoration: none;
-  color: #FFF;
+.card-title h4 {
+  font-family: 'Cardo', serif;
+  font-weight: 400;
+  font-size: 1.4em;
 }
+
+
 
 
 .recipe-detail-image {
@@ -133,34 +469,4 @@ a {
   margin-top: 80px;
   font-style: bold;
   text-align: center;
-}
-
-.advanced-searchbar {
-  width: 100%;
-  height: 80px;
-  padding-top: 20px;
-  background-color: lightgray;
-}
-
-#advanced-search-input {
-  margin-right: 10px;
-}
-
-#advanced-search-submit-button {
-  display: block;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#calories-drop-down{
-  margin-right: 10px;
-}
-
-#diet-label-drop-down{
-  margin-right: 10px;
-}
-
-#health-label-drop-down{
-  margin-right: 10px;
 }
