@@ -5,16 +5,16 @@ const DEFAULT_STATE = {
   isError: false
 };
 
+
 const SEARCH_PARAMETERS = {
   textInput: '',
   maxCalories: 20000,
-  dietLabel: '',
-  healthLabel: ''
+  dietLabel: 'balanced',
+  healthLabel: 'peanut-free'
 }
 
 
-
-//try rewriting as switch case
+//rewrite as switch case
 export const searchParameters = (state = SEARCH_PARAMETERS, action) => {
   if(action.type === RECIPE_ACTIONS.INPUT_CHANGE) {
     return {...state, textInput: action.payload };
