@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 
 const AdvancedSearchbar = ({textInput, searchParameters, onTextInputChange, onCaloriesSelect, onDietLabelSelect, onHealthLabelSelect, onSearchRecipes }) => (
-  <div>
+
     <div id="advanced-searchbar-input-group">
 
         <label htmlFor="advanced-search-input" className="searchbar-input-labels">Search by keyword</label>
@@ -27,7 +27,6 @@ const AdvancedSearchbar = ({textInput, searchParameters, onTextInputChange, onCa
         <label htmlFor="diet-label-drop-down" className="searchbar-input-labels">Diet Label</label>
         <select id="diet-label-drop-down" onChange={ev => onDietLabelSelect(ev.target.value)}>
           <option selected="selected" value=" "></option>
-          <option value="balanced">Balanced</option>
           <option value="high-protein">High Protein</option>
           <option value="high-fiber">High Fibre</option>
           <option value="low-fat">Low Fat</option>
@@ -46,18 +45,18 @@ const AdvancedSearchbar = ({textInput, searchParameters, onTextInputChange, onCa
           <option value="low-sugar">Low Sugar</option>
         </select>
 
+        <Link to={`/search/${searchParameters.textInput}`}>
+         <button
+           id="advanced-search-submit-button"
+           onClick={ () => onSearchRecipes(searchParameters)}
+         >
+           Search recipes
+         </button>
+        </Link>
+
     </div>
 
-    <Link to={`/search/${searchParameters.textInput}`}>
-     <button
-       id="advanced-search-submit-button"
-       onClick={ () => onSearchRecipes(searchParameters)}
-     >
-       Search recipes
-     </button>
-    </Link>
 
-  </div>
 )
 
 export default AdvancedSearchbar;
