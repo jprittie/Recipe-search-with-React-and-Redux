@@ -1,8 +1,9 @@
 import React from 'react';
+import coverphoto from '../img/cover-image.jpg';
 
 const Splash = () => (
-  <div>
-    <h1>A Super Fancy Image Will Go Here</h1>
+  <div id="cover-image">
+    <img src={coverphoto} alt={"cover-photo"}/>
   </div>
 );
 

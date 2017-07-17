@@ -47,7 +47,8 @@ ol, ul {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  max-width: 1200px;
+  /*max-width: 1300px;*/
+  height: 3000px;
   /*margin: 0 auto;*/
   padding-left: 20px;
   box-sizing: border-box; }
@@ -61,13 +62,13 @@ ol, ul {
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 95%;
+    width: 100%;
     padding: 0; } }
 
 /* For devices larger than 550px */
 @media (min-width: 550px) {
   .container {
-    width: 95%; }
+    width: 100%; }
   .column,
   .columns {
     margin-right: 2%; }
@@ -347,6 +348,14 @@ a {
   margin-right: auto;
 }
 
+#cover-image {
+  /*width: auto;*/
+  max-width: 100%;
+}
+
+#cover-image img {
+  max-width: 100%;
+}
 
 #recipe-list {
   max-width: 1200px;
@@ -427,36 +436,84 @@ a {
   font-size: 1.4em;
 }
 
-
-
-
-.recipe-detail-image {
-  float: right;
-  width: 400px;
-  height: 400px;
+#recipe-detail-container {
+  max-width: 1200px;
+  height: auto;
+  margin-top: 3%;
 }
 
-.recipe-detail {
+#recipe-detail-description {
+
+}
+
+#recipe-detail-title {
+  font-family: 'Cardo', serif;
+  font-weight: 500;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#recipe-detail-servings {
+  margin-top: 20px;
+  font-family: 'Cardo', serif;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+#recipe-detail-calories {
+  font-family: 'Cardo', serif;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+#recipe-detail-source {
+  font-family: 'Cardo', serif;
+  font-weight: 500;
+  font-size: 1.3em;
+  text-decoration: underline;
+  margin-bottom: 40px;
+}
+
+#recipe-detail-image {
+  zoom: 2;
+}
+
+#ingredient-list li {
+  list-style: none;
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#nutrition-labels {
+  width: 100%;
+  height: 200px;
+  clear: both;
+  margin-bottom: 60px;
+}
+
+#nutrition-labels p {
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+#diet-labels {
   float: left;
-  width: 400px;
+  margin-right: 80px;
 }
 
-.ingredient-list li {
-  list-style: none;
-  text-align: left;
-  margin-left: 0;
-  padding-left: 0;
-
-}
-
-.diet-labels li {
+#diet-labels li {
   list-style: none;
   text-align: left;
   margin-left: 0;
   padding-left: 0;
 }
 
-.health-labels li {
+#health-labels {
+  float: left;
+}
+
+#health-labels li {
   list-style: none;
   text-align: left;
   margin-left: 0;

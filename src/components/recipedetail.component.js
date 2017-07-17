@@ -5,37 +5,46 @@ import { Link } from 'react-router';
 
 const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
 
-  <div>
-    <div className="recipe-detail-image">
-     <img src={selectedRecipe.image} />
-    </div>
+  <div id="recipe-detail-container" className="twelve columns">
 
-    <div className="recipe-detail">
-      <h3>{selectedRecipe.label}</h3>
 
-      <ul className="ingredient-list">
-        {selectedRecipe.ingredientLines.map(ingredient => <li>{ingredient}</li>)}
-      </ul>
+    <div id="recipe-detail-description" className="five columns offset-by-one">
 
-      <p>Servings: {selectedRecipe.yield}</p>
-      <p>Calories per serving: {selectedRecipe.calories/selectedRecipe.yield}</p>
-      <Link to={selectedRecipe.url}>Source: {selectedRecipe.source}</Link>
-      <div className="diet-labels">
-        Diet Labels:
-        <ul>
-          {selectedRecipe.dietLabels.map(dietLabel => <li>{dietLabel}</li>)}
-        </ul>
-      </div>
-      <div className="health-labels">
-        Health Labels:
-        <ul>
-          {selectedRecipe.healthLabels.map(healthLabel => <li>{healthLabel}</li>)}
-        </ul>
-      </div>
-
+      <h3 id="recipe-detail-title">{selectedRecipe.label}</h3>
+      {/*
       <div>
         <button onClick={ () => onSaveRecipe(selectedRecipe)}>Save to My Recipes</button>
       </div>
+      */}
+
+      <ul id="ingredient-list">
+        {selectedRecipe.ingredientLines.map(ingredient => <li>{ingredient}</li>)}
+      </ul>
+
+      <p id="recipe-detail-servings">Servings: {selectedRecipe.yield}</p>
+      <p id="recipe-detail-calories">Calories per serving: {selectedRecipe.calories/selectedRecipe.yield}</p>
+      <Link to={selectedRecipe.url}><p id="recipe-detail-source">Source: {selectedRecipe.source}</p></Link>
+
+      <div id="nutrition-labels">
+        <div id="diet-labels">
+          <p>Diet Labels:</p>
+          <ul>
+            {selectedRecipe.dietLabels.map(dietLabel => <li>{dietLabel}</li>)}
+          </ul>
+        </div>
+        <div id="health-labels">
+          <p>Health Labels:</p>
+          <ul>
+            {selectedRecipe.healthLabels.map(healthLabel => <li>{healthLabel}</li>)}
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div id="recipe-detail-image" className="five columns">
+     <img src={selectedRecipe.image} />
     </div>
   </div>
 
