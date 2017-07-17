@@ -11,7 +11,7 @@ const RecipeList = ({recipeList, isError, onSetSelectedRecipe, loadingState, tex
 
     { (loadingState) ? <div className="loader"><h2>Loading results...</h2></div> : <div></div> }
 
-    { (recipeList.length===0 && !isError) ? <div className="loader"><h2>Sorry, there were no search results for "{textInput} "</h2></div> : <div></div> }
+    { (recipeList.length===0 && !isError) ? <div className="loader"><h2>Sorry, there were no search results.</h2></div> : <div></div> }
 
     { (isError) ? <div className="loader"><h2>Sorry, there was an error retrieving results.</h2></div> :
 
