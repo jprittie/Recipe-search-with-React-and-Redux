@@ -316,11 +316,12 @@ a {
 
 #advanced-searchbar-input-group {
   display: block;
-  margin-left: 40px;
+  margin-left: 2%;
 }
 
 #advanced-search-input {
   margin-right: 6px;
+  width: 100px;
 }
 
 .searchbar-input-labels {
@@ -473,7 +474,35 @@ a {
   font-weight: 500;
   font-size: 2em;
   margin-bottom: 10px;
+  padding-right: 40px;
 }
+
+#save-recipe-button {
+  background-color: #515b6d;
+  display: inline-block;
+  width: 160px;
+  margin-top: 20px;
+  color: #FFF;
+  border-radius: 6px;
+  border-width: 0;
+  border-style: none;
+  border-color: none;
+  border-image: none;
+}
+
+#save-recipe-button:active {
+  outline: none;
+  border: none;
+}
+
+#save-recipe-button:focus {
+  outline: none;
+}
+
+
+
+
+
 
 #recipe-detail-servings {
   margin-top: 20px;
@@ -492,7 +521,7 @@ a {
   font-family: 'Cardo', serif;
   font-weight: 500;
   font-size: 1.3em;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   margin-bottom: 40px;
 }
 

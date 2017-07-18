@@ -14,7 +14,7 @@ const AdvancedSearchbar = ({textInput, searchParameters, onTextInputChange, onCa
            onChange={ev => onTextInputChange(ev.target.value)}
          />
 
-       <label htmlFor="calories-drop-down" className="searchbar-input-labels">max calories per serving</label>
+       <label htmlFor="calories-drop-down" className="searchbar-input-labels">max calories/serving</label>
         <select id="calories-drop-down" type="number" onChange={ev => onCaloriesSelect(ev.target.value)}>
           <option selected="selected" value=" "></option>
           <option value="200">200</option>
