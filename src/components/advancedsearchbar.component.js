@@ -35,11 +35,10 @@ const AdvancedSearchbar = ({textInput, searchParameters, onTextInputChange, onCa
         <label htmlFor="health-label-drop-down" className="searchbar-input-labels">health label</label>
         <select id="health-label-drop-down" onChange={ev => onHealthLabelSelect(ev.target.value)}>
           <option selected="selected" value=" "></option>
-          <option value="peanut-free">Peanut Free</option>
-          <option value="tree-nut-free">Tree Nut Free</option>
           <option value="vegetarian">Vegetarian</option>
           <option value="gluten-free">Gluten Free</option>
           <option value="dairy-free">Dairy Free</option>
+          <option value="tree-nut-free">Tree Nut Free</option>
           <option value="low-sugar">Low Sugar</option>
         </select>
 
