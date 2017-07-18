@@ -6,6 +6,7 @@ import RecipeDetail from './recipedetail.component.js';
 
 const mapStateToProps = (state) => ({
   selectedRecipe: state.selectedRecipe,
+  savedRecipes: state.savedRecipes
 })
 
 const actions = {
