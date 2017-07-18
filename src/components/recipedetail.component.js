@@ -15,8 +15,14 @@ const RecipeDetail = ({selectedRecipe, savedRecipes, onSaveRecipe}) => (
         {selectedRecipe.ingredientLines.map(ingredient => <li>{ingredient}</li>)}
       </ul>
 
+      { (savedRecipes.length === 0) ?
+        <div>
+          <button id="save-recipe-button" onClick={ () => onSaveRecipe(selectedRecipe)}>save to my recipes</button>
+        </div>
+        : <div></div>
+      }
 
-      { (savedRecipes.some(elem => elem != selectedRecipe)) ?
+      { (savedRecipes.length > 0 && savedRecipes.some(elem => elem !== selectedRecipe)) ?
         <div>
           <button id="save-recipe-button" onClick={ () => onSaveRecipe(selectedRecipe)}>save to my recipes</button>
         </div>
