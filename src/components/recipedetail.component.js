@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
+const RecipeDetail = ({selectedRecipe, savedRecipes, onSaveRecipe}) => (
 
   <div id="recipe-detail-container" className="twelve columns">
 
@@ -10,12 +10,23 @@ const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
 
       <h3 id="recipe-detail-title">{selectedRecipe.label}</h3>
 
+
       <ul id="ingredient-list">
         {selectedRecipe.ingredientLines.map(ingredient => <li>{ingredient}</li>)}
       </ul>
 
+
+      { (savedRecipes.some(elem => elem === selectedRecipe)) ?
+        <div>
+          <button id="save-recipe-button" onClick={ () => onSaveRecipe(selectedRecipe)}>save to my recipes</button>
+        </div>
+
+        : <div></div>
+      }
+
+
       <p id="recipe-detail-servings">Servings: {selectedRecipe.yield}</p>
-      <p id="recipe-detail-calories">Calories per serving: {selectedRecipe.calories/selectedRecipe.yield}</p>
+      <p id="recipe-detail-calories">Calories per serving: {Math.round(selectedRecipe.calories/selectedRecipe.yield)}</p>
       <p id="recipe-detail-source">Source: {selectedRecipe.source}</p>
 
       {/*<Link to={selectedRecipe.url}><p id="recipe-detail-source">Source: {selectedRecipe.source}</p></Link>*/}
