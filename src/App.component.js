@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.css';
 
-
 import { history } from './index.js';
-import { Router, Route, IndexRoute } from 'react-router';
-import { Link } from 'react-router';
+import { Router, Route } from 'react-router';
 
 import Main from './components/main';
 import Splash from './components/splash';

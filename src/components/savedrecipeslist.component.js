@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { connect } from 'react-redux';
-import { getRecipeDetails } from '../redux/actions/recipe.actions';
 import RecipeCard from './recipecard';
 
 

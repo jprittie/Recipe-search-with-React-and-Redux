@@ -1,5 +1,4 @@
 import React from 'react';
-import Searchbar from './searchbar';
 import AdvancedSearchbar from './advancedsearchbar.container';
 import { Link } from 'react-router';
 
@@ -9,7 +8,7 @@ const Main = (props) => (
     <div id="header">
       <Link to="/" id="app-title">
         <h1 id="main-title">search recipes</h1>
-        <h2 id="main-subhed">with the Edamam API</h2>
+        <h2 id="main-subhed">with the edamam api</h2>
       </Link>
       <Link to="/savedrecipes" className="saved-recipes-link">
         <h4>view saved recipes</h4>

@@ -6,13 +6,9 @@ import { savedRecipes } from './saverecipes.reducer';
 export default combineReducers({
   recipe: recipeReducer,
   routing: routerReducer,
-  //textInput: textInput,
-  //maxCalories: maxCalories,
   searchParameters: searchParameters,
   selectedRecipe: selectedRecipe,
   loadingState: loadingState,
   savedRecipes: savedRecipes,
-  testReducer: (state = 'foobar', action) => state // a boring reducer just to illustrate combine reducer
-});
 
-  //recipe.list: recipe.list,
+});

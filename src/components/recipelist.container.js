@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { connect } from 'react-redux';
 import { getRecipeDetails } from '../redux/actions/recipe.actions';
 import RecipeList from './recipelist.component.js';

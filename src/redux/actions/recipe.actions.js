@@ -49,10 +49,3 @@ export const setLoadingState = boolean => ({
   type: RECIPE_ACTIONS.SET_LOADING_STATE,
   payload: boolean
 })
-
-/*
-export const clearRecipeSearchResults = emptylist => ({
-  type: RECIPE_ACTIONS.CLEAR_SEARCH_RESULTS,
-  payload: emptylist
-})
-*/

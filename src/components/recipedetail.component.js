@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { saveToMyRecipes } from '../redux/actions/saverecipes.actions';
 import { Link } from 'react-router';
 
 const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
@@ -11,11 +9,6 @@ const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
     <div id="recipe-detail-description" className="five columns offset-by-one">
 
       <h3 id="recipe-detail-title">{selectedRecipe.label}</h3>
-      {/*
-      <div>
-        <button onClick={ () => onSaveRecipe(selectedRecipe)}>Save to My Recipes</button>
-      </div>
-      */}
 
       <ul id="ingredient-list">
         {selectedRecipe.ingredientLines.map(ingredient => <li>{ingredient}</li>)}
@@ -23,7 +16,9 @@ const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
 
       <p id="recipe-detail-servings">Servings: {selectedRecipe.yield}</p>
       <p id="recipe-detail-calories">Calories per serving: {selectedRecipe.calories/selectedRecipe.yield}</p>
-      <Link to={selectedRecipe.url}><p id="recipe-detail-source">Source: {selectedRecipe.source}</p></Link>
+      <p id="recipe-detail-source">Source: {selectedRecipe.source}</p>
+
+      {/*<Link to={selectedRecipe.url}><p id="recipe-detail-source">Source: {selectedRecipe.source}</p></Link>*/}
 
       <div id="nutrition-labels">
         <div id="diet-labels">
@@ -44,7 +39,7 @@ const RecipeDetail = ({selectedRecipe, onSaveRecipe}) => (
     </div>
 
     <div id="recipe-detail-image" className="five columns">
-     <img src={selectedRecipe.image} />
+     <img src={selectedRecipe.image} alt="finished recipe" />
     </div>
   </div>
 

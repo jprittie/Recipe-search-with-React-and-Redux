@@ -262,7 +262,7 @@ a {
 } */
 
 #header {
-  background-color: #4e4f51;
+  background-color: #515b6d;
   height: 120px;
   padding: 20px;
   color: #FFF;
@@ -278,7 +278,7 @@ a {
   text-align: center;
   font-size: 2em;
   font-family: 'Fira Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: #FFF;
 }
 
@@ -306,7 +306,7 @@ a {
   width: 100%;
   height: 60px;
   padding-top: 30px;
-  background-color: #aeb0b2;
+  background-color: #96a3ba;
 }
 
 #advanced-searchbar {
@@ -341,9 +341,26 @@ a {
 }
 
 #advanced-search-submit-button {
-  /*background-color: #4e4f51;*/
+  background-color: #515b6d;
   display: inline-block;
+  min-width: 120px;
   margin-left: 10px;
+  color: #FFF;
+  border-radius: 6px;
+  border-width: 0;
+  border-style: none;
+  border-color: none;
+  border-image: none;
+
+}
+
+#advanced-search-submit-button:active {
+  outline: none;
+  border: none;
+}
+
+#advanced-search-submit-button:focus {
+  outline: none;
 }
 
 #cover-image {
@@ -359,7 +376,7 @@ a {
   max-width: 1200px;
   height: auto;
   margin-top: 40px;
-  margin-left: 60px;
+  margin-left: 40px;
 }
 
 #recipe-list-header {

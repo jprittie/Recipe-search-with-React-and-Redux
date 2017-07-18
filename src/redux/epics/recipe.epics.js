@@ -15,7 +15,7 @@ export const getRecipeByNameEpic = action$ =>
   action$.ofType(RECIPE_ACTIONS.GET_RECIPES_BY_NAME)
     .flatMap(action =>
       Observable.concat(
-        // Fire 3 actions, one after the other
+        // Set loading state before and after API call
         Observable.of({
           type: RECIPE_ACTIONS.SET_LOADING_STATE,
           payload: true
@@ -37,27 +37,3 @@ export const getRecipeByNameEpic = action$ =>
 
       )
     );
-
-
-
-
-  //  action$.ofType(RECIPE_ACTIONS.GET_RECIPES_BY_NAME)
-  //    .mergeMap(action =>
-        /*you can use basically any kind of observable or promise in a mergemap
-        if you return any sort of async object that rxjs understands (which is most). it automatically deals with WAITING for this async action to complete before moving on to the next method in the chain. think of merge map like a map that WAITS until whatever you return is finished. here we are saying, after I get the GET_RECIPES_BY_NAME action, I want to 'map'. the data from that action into this new request I make, but WAIT until it gets back from the server*/
-
-/*
-        Observable.ajax(`${BASE_ENDPOINT}&q=${action.payload}`)
-          .map(({ response }) => ({
-            type: RECIPE_ACTIONS.RECIPES_RECEIVED_SUCCESS,
-            payload: response.hits.map(hit => hit.recipe)
-          }))
-          .catch(error => Observable.of({
-            type: RECIPE_ACTIONS.RECIPES_RECEIVED_ERROR,
-            payload: error.xhr.response,
-            error: true
-          }))
-
-
-      );
-*/

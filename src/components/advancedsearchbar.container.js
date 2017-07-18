@@ -1,4 +1,4 @@
-import React from 'react';
+ 
 import { connect } from 'react-redux';
 import { inputChange, getRecipeByName, searchByMaxCalories, searchByDietLabel, searchByHealthLabel } from '../redux/actions/recipe.actions';
 import AdvancedSearchbar from './advancedsearchbar.component'

@@ -6,6 +6,7 @@ const DEFAULT_STATE = {
 };
 
 
+/* These search parameters are clunky... the API won't let me send empty strings to calories/dietlabels/health labels, so I'm going to try using a conditional in the epic so the API request only includes non-empty parameters. But for now, I'm just setting default parameters that will get the most search results.*/
 const SEARCH_PARAMETERS = {
   textInput: '',
   maxCalories: 20000,
@@ -31,13 +32,7 @@ export const searchParameters = (state = SEARCH_PARAMETERS, action) => {
   return state;
 };
 
-/*
-export const maxCalories = (state = '', action) => {
-  if(action.type === RECIPE_ACTIONS.CALORIES_SELECT) {
-    return action.payload
-  }
-  return state;
-};*/
+
 
 export const selectedRecipe = (state = {}, action) => {
   if(action.type === RECIPE_ACTIONS.GET_RECIPE_DETAILS) {
@@ -63,11 +58,3 @@ export const loadingState = (state = false, action) => {
   }
   return state;
 }
-
-/*
-export const recipe.list = (state = [], action) => {
-  if(action.type === RECIPE_ACTIONS.CLEAR_SEARCH_RESULTS) {
-    return state;
-  }
-  return state;
-} */

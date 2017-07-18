@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { connect } from 'react-redux';
-import { getRecipeDetails } from '../redux/actions/recipe.actions';
 import RecipeCard from './recipecard';
 
 
@@ -13,7 +11,10 @@ const RecipeList = ({recipeList, isError, onSetSelectedRecipe, loadingState, tex
 
     { (recipeList.length===0 && !isError) ? <div className="loader"><h2>Sorry, there were no search results.</h2></div> : <div></div> }
 
-    { (isError) ? <div className="loader"><h2>Sorry, there was an error retrieving results.</h2></div> :
+    {/*}
+    { (textInputError) ? <div className="loader"><h2>Please enter a search term.</h2></div> : <div></div> }*/}
+
+    { (isError) ? <div className="loader"><h2>Sorry, there was a server error. Please try again later.</h2></div> :
 
       <div id="recipe-list">
         <div id="recipe-list-header" className="twelve columns">
