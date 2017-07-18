@@ -16,7 +16,7 @@ const RecipeDetail = ({selectedRecipe, savedRecipes, onSaveRecipe}) => (
       </ul>
 
 
-      { (savedRecipes.some(elem => elem === selectedRecipe)) ?
+      { (savedRecipes.some(elem => elem != selectedRecipe)) ?
         <div>
           <button id="save-recipe-button" onClick={ () => onSaveRecipe(selectedRecipe)}>save to my recipes</button>
         </div>

@@ -4,7 +4,7 @@ import { loadState } from '../../localstorage';
 const SAVED_RECIPES = loadState();
 
 const containsObject = (obj, list) => {
-  return list.some(elem => elem === obj)
+  return list.some(elem => elem == obj)
 }
 
 export const savedRecipes = (state = SAVED_RECIPES || [], action) => {
