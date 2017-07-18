@@ -7,7 +7,7 @@ const SavedRecipesList = ({savedRecipes, onSetSelectedRecipe, selectedRecipe}) =
 
   <div>
 
-    { (savedRecipes.length===0) ? <div className="loader"><h2>You don&#x27t have any saved recipes at the moment.</h2></div> : <div></div> }
+    { (savedRecipes.length===0) ? <div className="loader"><h2>You don't have any saved recipes at the moment.</h2></div> : <div></div> }
 
     <div id="recipe-list">
       <div id="recipe-list-header">
