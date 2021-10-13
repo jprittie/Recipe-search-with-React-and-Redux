@@ -20,7 +20,7 @@ export const getRecipeByNameEpic = action$ =>
           type: RECIPE_ACTIONS.SET_LOADING_STATE,
           payload: true
         }),
-        Observable.ajax(`${BASE_ENDPOINT}&q=${action.payload.textInput}&from=0&to=9&calories=lte${action.payload.maxCalories}&diet=${action.payload.dietLabel}&health=${action.payload.healthLabel}`)
+        Observable.ajax(`${BASE_ENDPOINT}&q=${action.payload.textInput}&from=0&to=9&calories=0-${action.payload.maxCalories}&diet=${action.payload.dietLabel}&health=${action.payload.healthLabel}`)
           .map(({ response }) => ({
             type: RECIPE_ACTIONS.RECIPES_RECEIVED_SUCCESS,
             payload: response.hits.map(hit => hit.recipe)
